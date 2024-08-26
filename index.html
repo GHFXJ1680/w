@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>远程协助软件 -> 按需下载</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #desktop-content, #mobile-content {
+            text-align: center;
+        }
+        .button {
+            display: block;
+            width: 230px;
+            padding: 15px;
+            margin: 30px auto; /* 增加按钮之间的距离 */
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            text-align: center;
+        }
+        .button-blue {
+            background-color: #007bff;
+        }
+        .button-green {
+            background-color: #28a745;
+        }
+        #mobile-content {
+            display: none;
+        }
+    </style>
+    <script type="text/javascript">
+        function isMobileDevice() {
+            return /Mobi|Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(navigator.userAgent);
+        }
+
+        window.onload = function() {
+            if (isMobileDevice()) {
+                document.getElementById('desktop-content').style.display = 'none';
+                document.getElementById('mobile-content').style.display = 'block';
+            } else {
+                document.getElementById('desktop-content').style.display = 'block';
+                document.getElementById('mobile-content').style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="desktop-content">
+        <a href="https://cdn.jsdelivr.net/gh/GHFXJ1680/a1680@main/YC_WIN.zip" class="button button-blue">
+            windows系统 ＞＞＞ 点我下载
+        </a>
+        <a href="https://cdn.jsdelivr.net/gh/GHFXJ1680/a1680@main/YC_MAC.zip" class="button button-green">
+            Mac苹果系统 ＞＞＞ 点我下载
+        </a>
+    </div>
+    <div id="mobile-content">
+        <p>请在电脑浏览器上打开链接</p>
+    </div>
+</body>
+</html>
